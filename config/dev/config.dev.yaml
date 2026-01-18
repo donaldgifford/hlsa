@@ -1,0 +1,21 @@
+server:
+  host: 0.0.0.0
+  port: 8080
+
+prometheus:
+  url: http://localhost:9090
+  timeout: 30s
+
+storage:
+  garage:
+    endpoint: http://localhost:3900
+    region: garage
+    bucket: hlsa
+    access_key_id: ${GARAGE_ACCESS_KEY_ID}
+    secret_access_key: ${GARAGE_SECRET_ACCESS_KEY}
+
+collector:
+  interval: 1m
+
+sync:
+  enabled: false  # Disable R2 sync for local dev

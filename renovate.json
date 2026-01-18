@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":rebaseStalePrs", ":semanticCommits"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions",
+      "labels": ["dependencies", "github-actions"]
+    },
+    {
+      "matchManagers": ["gomod"],
+      "groupName": "Go Dependencies",
+      "groupSlug": "go-deps",
+      "labels": ["dependencies", "go"]
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "Docker",
+      "groupSlug": "docker",
+      "labels": ["dependencies", "docker"]
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "groupName": "Docker Compose",
+      "groupSlug": "docker-compose",
+      "labels": ["dependencies", "docker"]
+    },
+    {
+      "matchFileNames": ["mise.toml"],
+      "groupName": "mise tools",
+      "groupSlug": "mise-tools",
+      "labels": ["dependencies", "tooling"]
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^mise\\.toml$"],
+      "matchStrings": ["go = \"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^mise\\.toml$"],
+      "matchStrings": [
+        "golangci-lint = \"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
+      ],
+      "depNameTemplate": "golangci/golangci-lint",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^mise\\.toml$"],
+      "matchStrings": ["goreleaser = \"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
+      "depNameTemplate": "goreleaser/goreleaser",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ]
+}

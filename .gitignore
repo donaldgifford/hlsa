@@ -1,0 +1,46 @@
+# Bazel
+/bazel-*
+/.bazel-cache
+user.bazelrc
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets & Environment
+*.pem
+*.key
+secrets.yaml
+*.env
+.env*
+!.env.local.example
+
+# mise
+.mise.local.toml
+
+# Build artifacts
+bin/
+dist/
+deps.png
+coverage.out
+*.log
+
+# Binary
+hlsa

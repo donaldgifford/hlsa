@@ -1,0 +1,36 @@
+# mise.toml - Tool version management for HLSA
+# mise manages: Go version + non-Go tools + Go Tools
+# Go tools installed via: make tools (uses mise use)
+# https://mise.jdx.dev/
+
+[env]
+HLSA_ENV = "development"
+
+[tools]
+# Core language
+go = "1.25.4"
+
+# Go Packages
+"go:github.com/spf13/cobra-cli" = "latest"
+"go:golang.org/x/tools/cmd/goimports" = "latest"
+"go:github.com/vektra/mockery/v2" = "latest"
+
+# Non-Go platform-specific tools
+golangci-lint = "2.8.0" # Binary is faster than go install version
+goreleaser = "2.13.3"   # Release automation
+golines = "latest"      # line length format
+
+# Node.js based tools
+markdownlint-cli2 = "0.18.1"
+prettier = "3.7.4"
+
+# YAML tools
+yamllint = "1.37.1" # YAML linting
+yamlfmt = "0.20.0"  # YAML formatting (Go-based)
+yq = "4.48.1"       # YAML processor (query and manipulate YAML files)
+
+jq = "latest"
+
+[settings]
+trusted_config_paths = ["."]
+auto_install = true
