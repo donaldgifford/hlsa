@@ -3,7 +3,7 @@ module github.com/donaldgifford/hlsa
 go 1.25.4
 
 require (
-	github.com/labstack/echo/v4 v4.15.0
+	github.com/labstack/echo/v4 v4.15.1
 	github.com/rs/zerolog v1.34.0
 )
 
