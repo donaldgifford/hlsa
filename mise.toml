@@ -8,7 +8,7 @@ HLSA_ENV = "development"
 
 [tools]
 # Core language
-go = "1.25.4"
+go = "1.26.1"
 
 # Go Packages
 "go:github.com/spf13/cobra-cli" = "latest"
@@ -16,18 +16,18 @@ go = "1.25.4"
 "go:github.com/vektra/mockery/v2" = "latest"
 
 # Non-Go platform-specific tools
-golangci-lint = "2.8.0" # Binary is faster than go install version
-goreleaser = "2.13.3"   # Release automation
+golangci-lint = "2.11.3" # Binary is faster than go install version
+goreleaser = "2.14.3"   # Release automation
 golines = "latest"      # line length format
 
 # Node.js based tools
-markdownlint-cli2 = "0.18.1"
+markdownlint-cli2 = "0.21.0"
 prettier = "3.7.4"
 
 # YAML tools
-yamllint = "1.37.1" # YAML linting
-yamlfmt = "0.20.0"  # YAML formatting (Go-based)
-yq = "4.48.1"       # YAML processor (query and manipulate YAML files)
+yamllint = "1.38.0" # YAML linting
+yamlfmt = "0.21.0"  # YAML formatting (Go-based)
+yq = "4.52.4"       # YAML processor (query and manipulate YAML files)
 
 jq = "latest"
 
